@@ -6,17 +6,10 @@
   <img src="assets/pop-quiz-demo.gif" alt="Pop-exam demo" width="640">
 </p>
 
-<h2 align="center">Have you fallen off the slop cliff?</h2>
+## Have you fallen off the slop cliff?
 
-<p align="center">
-  Test it! Use this short gamified quiz to make yourself think about your changes,<br>
-  and check that you haven't fallen off the slop cliff.
-</p>
+Test it! Use this short gamified quiz to make yourself think about your changes, and check that you haven't fallen off the slop cliff.
 
-<p align="center">
-  <img src="assets/slop-cliff.png" alt="Slop Cliff" width="420">
-</p>
+<img src="assets/slop-cliff.png" alt="Slop Cliff" width="420">
 
-<p align="center">
-  Credit to <a href="https://x.com/tomjiralerspong">Thomas Jiralerspong</a>
-</p>
+Credit to [Thomas Jiralerspong](https://x.com/tomjiralerspong)
