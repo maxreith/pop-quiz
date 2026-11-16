@@ -1,9 +1,9 @@
 ---
-name: exam
+name: pop-quiz
 description: Write a 5-question true/false exam that tests the developer's understanding of a plan, PR or branch diff, and publish it as an HTML page with instant feedback and hidden solutions. Use after an agent creates a PR, or when the user asks for an exam, quiz, or understanding check on a change.
 ---
 
-# Exam
+# Pop Quiz
 
 Write a short true/false exam on one PR or plan. The developer must answer it to
 show that they understand the change. The model for the style is a
@@ -12,7 +12,7 @@ reason through the mechanism to decide if it is true.
 
 ## 1. Read the change
 
-- If there was code written, get the diff: `gh pr diff <number>`, or `git diff main...HEAD`. 
+- If there was code written, get the diff: `gh pr diff <number>`, or `git diff <base>...HEAD`, where `<base>` is the PR's base branch or the repo's default branch (`git symbolic-ref --short refs/remotes/origin/HEAD`).
   Read the full functions and classes that the diff touches, their callers,
   and the configs that feed them. The best questions come from code that
   the diff does not show.
@@ -24,7 +24,7 @@ reason through the mechanism to decide if it is true.
 
 Each statement is one claim about the behavior of the code. Make them have
 increasing difficulty. 
-The default number of statements is 10, unless the user asks for another number.
+The default number of statements is 5, unless the user asks for another number.
 The statements could come from categories as the following:
 
 1. Broad purpose. Still not obvious: include one wrong detail that a
@@ -43,25 +43,25 @@ Rules:
   consequence that the developer must derive.
 - A false statement is wrong in exactly one detail. Do not make it
   absurd.
-- Use both answers. Do not make all 5 statements true or all false.
-- Each statement must be decidable from the code alone, with no
-  ambiguity. If you cannot prove the answer with a `file:line`
-  reference, drop the statement.
+- Use both answers. Do not make all statements true or all false.
+- Each statement must be decidable with no ambiguity: from the code
+  when it exists, or from the plan agreed in the conversation when no
+  code is written yet. If you cannot back the answer with a `file:line`
+  reference (code) or a specific point in the plan, drop the statement.
 - Keep each statement to 1–3 sentences. Put names in `code` style.
 - Only the last question should cover an edge case.
-- Each solution: the answer in 2–4 sentences, plus the `file:line`
-  references that prove it (if applicable).
+- Each solution: the answer in 2–4 sentences, plus the references that
+  prove it: `file:line` for code, or the plan step or decision it rests
+  on (e.g. `plan: step 3`).
 
 ## 3. Build the page
 
-- Pick the template from this skill folder:
-  - `template-paper.html`: a paper exam form. The box you
-    tick shows a green check or a red X, and a tally in the header
-    fills it only when the user asks for the sheet design.
-- Copy the template to the scratchpad as `pr-exam-<repo>-<pr>.html`.
+- Use `template-paper.html` from this skill folder: a paper exam form.
+  The box you tick shows a green check or a red X, and a tally in the
+  header fills in as the user answers.
+- Copy the template to the scratchpad as `pop-quiz-<repo>-<pr>.html`.
 - Replace only the `EXAM` object between the `EXAM DATA` markers. Keep
-  the rest of the template unchanged. Both templates use the same
-  `EXAM` format.
+  the rest of the template unchanged.
 - Write `statement` and `explain` as plain text. Put code names in
   backticks: the page escapes the text and renders backticks as code.
 - Put each `file:line` reference as one item in `refs`. The page shows
