@@ -6,9 +6,9 @@
   <img src="assets/pop-quiz-demo.gif" alt="Pop-exam demo" width="640">
 </p>
 
-## Have you fallen off slop cliff?
+<h2 align="center">Have you fallen off slop cliff?</h2>
 
-Test it! Use this short gamified quiz to make yourself think about your changes, and check that you haven't fallen off the slop cliff.
+Test it! Use this short gamified quiz to make yourself think about your changes, and check that you haven't fallen off slop cliff.
 
 <p align="center">
   <img src="assets/slop-cliff.png" alt="Slop Cliff" width="420">
